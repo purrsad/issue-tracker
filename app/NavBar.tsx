@@ -8,7 +8,7 @@ import classNames from "classnames";
 
 const NavBar = () => {
 	const currentPath = usePathname();
-	console.log(currentPath);
+	//console.log(currentPath);
 
 	const links = [
 		{ label: "Dashboard", href: "/" },
@@ -16,7 +16,7 @@ const NavBar = () => {
 	];
 
 	return (
-		<nav className="flex space-x-6 border-b mb-6 px-6 h-14 items-center">
+		<nav className="flex space-x-6 border-b mb-5 px-5 h-14 items-center">
 			<Link href="/">
 				<AiFillBug />
 			</Link>
@@ -26,7 +26,8 @@ const NavBar = () => {
 						key={link.href}
 						href={link.href}
 						className={classNames({
-							"text-zinc-900": link.href === currentPath,
+							"text-zinc-900 font-medium":
+								link.href === currentPath,
 							"text-zinc-500": link.href !== currentPath,
 							"hover:text-zinc-800 transition-colors": true,
 						})}
