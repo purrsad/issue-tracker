@@ -1,7 +1,7 @@
 import { IssueStatusBadge, Link } from "@/app/components";
 import { Issue, Status } from "@prisma/client";
 import { ArrowUpIcon } from "@radix-ui/react-icons";
-import { Table } from "@radix-ui/themes";
+import { Flex, Table, Text } from "@radix-ui/themes";
 import NextLink from "next/link";
 
 export interface IssueQuery {
@@ -16,6 +16,13 @@ interface Props {
 }
 
 const IssueTable = ({ searchParams, issues }: Props) => {
+	if (issues.length === 0)
+		return (
+			<Flex justify="center" mt="5">
+				<Text>No data found.</Text>
+			</Flex>
+		);
+
 	return (
 		<Table.Root variant="surface">
 			<Table.Header>
