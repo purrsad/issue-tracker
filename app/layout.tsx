@@ -17,6 +17,9 @@ const inter = Inter({
 export const metadata: Metadata = {
 	title: "Dbug",
 	description: "Debug your application in a minimal way",
+	icons: {
+		icon: "/icon.png",
+	},
 };
 
 export default function RootLayout({
